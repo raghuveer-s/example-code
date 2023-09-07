@@ -26,7 +26,7 @@ users.to_sql("Users", engine, index=False, if_exists="append")
 # Generate between 1-10 purchases for each user
 purchase_id = 1
 end_date = datetime.date.today()
-dates = [end_date - datetime.timedelta(i)  for i in range(30)]
+#dates = [end_date - datetime.timedelta(i)  for i in range(30)]
 for i in range(len(users)):
     number_of_purchases = random.randint(0, 10)
     purchases = []
@@ -36,7 +36,7 @@ for i in range(len(users)):
             "txn_id": purchase_id,
             "user_id": users.loc[i, "user_id"],
             "value": value,
-            "purchase_date": dates[random.randint(0, len(dates)-1)].strftime("%Y-%m-%d")
+            "purchase_date": end_date.strftime("%Y-%m-%d")
         })
         purchase_id = purchase_id + 1
 

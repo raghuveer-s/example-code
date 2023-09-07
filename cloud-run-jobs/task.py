@@ -25,7 +25,7 @@ def compute():
     # Create a session
     session = engine.connect()
 
-    # Retrieve 10 random user ids
+    # Retrieve 10 user ids
     user_ids = session.execute(
         text(f"""
         SELECT user_id
@@ -41,25 +41,20 @@ def compute():
 
     # Retrieve purchases for each user id
     todays_date = datetime.date.today()
-    purchases = []
+    purchases = {}
     for user_id in user_id_list:
-        purchases.extend(
-            session.execute(
-                text(f"""
-                SELECT *
-                FROM Purchases
-                WHERE user_id = {user_id} and purchase_date = '{todays_date}'
-                """)
-            )
+        user_purchases = session.execute(
+            text(f"""
+            SELECT *
+            FROM Purchases
+            WHERE user_id = {user_id} and purchase_date = '{todays_date}'
+            """)
         )
+        purchases[user_id] = sum([purchase[2] for purchase in user_purchases])
 
     # Calculate total revenue
-    total_revenue = 0.0
-    for purchase in purchases:
-        total_revenue += purchase[1]
-
-    # Add total revenue if it exists
-    session.execute(text(f"INSERT INTO Revenue(revenue_date, total_revenue) VALUES ('{todays_date}', {total_revenue}) ON DUPLICATE KEY UPDATE `total_revenue` = `total_revenue` + {total_revenue}"))
+    for user_id, total_revenue in purchases.items():
+        session.execute(text(f"INSERT INTO Revenue(user_id, total_revenue, revenue_date) VALUES ({user_id}, {total_revenue}, '{todays_date}')"))
 
     session.commit()
 
