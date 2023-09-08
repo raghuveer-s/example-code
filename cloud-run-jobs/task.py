@@ -25,7 +25,7 @@ def compute():
     # Create a session
     session = engine.connect()
 
-    # Retrieve 10 user ids
+    # Retrieve user ids
     user_ids = session.execute(
         text(f"""
         SELECT user_id
