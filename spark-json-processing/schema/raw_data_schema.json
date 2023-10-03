@@ -1,0 +1,429 @@
+{
+    "fields": [
+        {
+            "metadata": {},
+            "name": "author",
+            "nullable": true,
+            "type": "string"
+        },
+        {
+            "metadata": {},
+            "name": "crawled",
+            "nullable": true,
+            "type": "string"
+        },
+        {
+            "metadata": {},
+            "name": "entities",
+            "nullable": true,
+            "type": {
+                "fields": [
+                    {
+                        "metadata": {},
+                        "name": "locations",
+                        "nullable": true,
+                        "type": {
+                            "containsNull": true,
+                            "elementType": {
+                                "fields": [
+                                    {
+                                        "metadata": {},
+                                        "name": "name",
+                                        "nullable": true,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "metadata": {},
+                                        "name": "sentiment",
+                                        "nullable": true,
+                                        "type": "string"
+                                    }
+                                ],
+                                "type": "struct"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    {
+                        "metadata": {},
+                        "name": "organizations",
+                        "nullable": true,
+                        "type": {
+                            "containsNull": true,
+                            "elementType": {
+                                "fields": [
+                                    {
+                                        "metadata": {},
+                                        "name": "name",
+                                        "nullable": true,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "metadata": {},
+                                        "name": "sentiment",
+                                        "nullable": true,
+                                        "type": "string"
+                                    }
+                                ],
+                                "type": "struct"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    {
+                        "metadata": {},
+                        "name": "persons",
+                        "nullable": true,
+                        "type": {
+                            "containsNull": true,
+                            "elementType": {
+                                "fields": [
+                                    {
+                                        "metadata": {},
+                                        "name": "name",
+                                        "nullable": true,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "metadata": {},
+                                        "name": "sentiment",
+                                        "nullable": true,
+                                        "type": "string"
+                                    }
+                                ],
+                                "type": "struct"
+                            },
+                            "type": "array"
+                        }
+                    }
+                ],
+                "type": "struct"
+            }
+        },
+        {
+            "metadata": {},
+            "name": "external_links",
+            "nullable": true,
+            "type": {
+                "containsNull": true,
+                "elementType": "string",
+                "type": "array"
+            }
+        },
+        {
+            "metadata": {},
+            "name": "highlightText",
+            "nullable": true,
+            "type": "string"
+        },
+        {
+            "metadata": {},
+            "name": "highlightTitle",
+            "nullable": true,
+            "type": "string"
+        },
+        {
+            "metadata": {},
+            "name": "language",
+            "nullable": true,
+            "type": "string"
+        },
+        {
+            "metadata": {},
+            "name": "locations",
+            "nullable": true,
+            "type": {
+                "containsNull": true,
+                "elementType": "string",
+                "type": "array"
+            }
+        },
+        {
+            "metadata": {},
+            "name": "ord_in_thread",
+            "nullable": true,
+            "type": "long"
+        },
+        {
+            "metadata": {},
+            "name": "organizations",
+            "nullable": true,
+            "type": {
+                "containsNull": true,
+                "elementType": "string",
+                "type": "array"
+            }
+        },
+        {
+            "metadata": {},
+            "name": "persons",
+            "nullable": true,
+            "type": {
+                "containsNull": true,
+                "elementType": "string",
+                "type": "array"
+            }
+        },
+        {
+            "metadata": {},
+            "name": "published",
+            "nullable": true,
+            "type": "string"
+        },
+        {
+            "metadata": {},
+            "name": "text",
+            "nullable": true,
+            "type": "string"
+        },
+        {
+            "metadata": {},
+            "name": "thread",
+            "nullable": true,
+            "type": {
+                "fields": [
+                    {
+                        "metadata": {},
+                        "name": "country",
+                        "nullable": true,
+                        "type": "string"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "domain_rank",
+                        "nullable": true,
+                        "type": "long"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "main_image",
+                        "nullable": true,
+                        "type": "string"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "participants_count",
+                        "nullable": true,
+                        "type": "long"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "performance_score",
+                        "nullable": true,
+                        "type": "long"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "published",
+                        "nullable": true,
+                        "type": "string"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "replies_count",
+                        "nullable": true,
+                        "type": "long"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "section_title",
+                        "nullable": true,
+                        "type": "string"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "site",
+                        "nullable": true,
+                        "type": "string"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "site_full",
+                        "nullable": true,
+                        "type": "string"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "site_section",
+                        "nullable": true,
+                        "type": "string"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "site_type",
+                        "nullable": true,
+                        "type": "string"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "social",
+                        "nullable": true,
+                        "type": {
+                            "fields": [
+                                {
+                                    "metadata": {},
+                                    "name": "facebook",
+                                    "nullable": true,
+                                    "type": {
+                                        "fields": [
+                                            {
+                                                "metadata": {},
+                                                "name": "comments",
+                                                "nullable": true,
+                                                "type": "long"
+                                            },
+                                            {
+                                                "metadata": {},
+                                                "name": "likes",
+                                                "nullable": true,
+                                                "type": "long"
+                                            },
+                                            {
+                                                "metadata": {},
+                                                "name": "shares",
+                                                "nullable": true,
+                                                "type": "long"
+                                            }
+                                        ],
+                                        "type": "struct"
+                                    }
+                                },
+                                {
+                                    "metadata": {},
+                                    "name": "gplus",
+                                    "nullable": true,
+                                    "type": {
+                                        "fields": [
+                                            {
+                                                "metadata": {},
+                                                "name": "shares",
+                                                "nullable": true,
+                                                "type": "long"
+                                            }
+                                        ],
+                                        "type": "struct"
+                                    }
+                                },
+                                {
+                                    "metadata": {},
+                                    "name": "linkedin",
+                                    "nullable": true,
+                                    "type": {
+                                        "fields": [
+                                            {
+                                                "metadata": {},
+                                                "name": "shares",
+                                                "nullable": true,
+                                                "type": "long"
+                                            }
+                                        ],
+                                        "type": "struct"
+                                    }
+                                },
+                                {
+                                    "metadata": {},
+                                    "name": "pinterest",
+                                    "nullable": true,
+                                    "type": {
+                                        "fields": [
+                                            {
+                                                "metadata": {},
+                                                "name": "shares",
+                                                "nullable": true,
+                                                "type": "long"
+                                            }
+                                        ],
+                                        "type": "struct"
+                                    }
+                                },
+                                {
+                                    "metadata": {},
+                                    "name": "stumbledupon",
+                                    "nullable": true,
+                                    "type": {
+                                        "fields": [
+                                            {
+                                                "metadata": {},
+                                                "name": "shares",
+                                                "nullable": true,
+                                                "type": "long"
+                                            }
+                                        ],
+                                        "type": "struct"
+                                    }
+                                },
+                                {
+                                    "metadata": {},
+                                    "name": "vk",
+                                    "nullable": true,
+                                    "type": {
+                                        "fields": [
+                                            {
+                                                "metadata": {},
+                                                "name": "shares",
+                                                "nullable": true,
+                                                "type": "long"
+                                            }
+                                        ],
+                                        "type": "struct"
+                                    }
+                                }
+                            ],
+                            "type": "struct"
+                        }
+                    },
+                    {
+                        "metadata": {},
+                        "name": "spam_score",
+                        "nullable": true,
+                        "type": "double"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "title",
+                        "nullable": true,
+                        "type": "string"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "title_full",
+                        "nullable": true,
+                        "type": "string"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "url",
+                        "nullable": true,
+                        "type": "string"
+                    },
+                    {
+                        "metadata": {},
+                        "name": "uuid",
+                        "nullable": true,
+                        "type": "string"
+                    }
+                ],
+                "type": "struct"
+            }
+        },
+        {
+            "metadata": {},
+            "name": "title",
+            "nullable": true,
+            "type": "string"
+        },
+        {
+            "metadata": {},
+            "name": "url",
+            "nullable": true,
+            "type": "string"
+        },
+        {
+            "metadata": {},
+            "name": "uuid",
+            "nullable": true,
+            "type": "string"
+        }
+    ],
+    "type": "struct"
+}
